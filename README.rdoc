@@ -5,13 +5,13 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.2.1, Rails 4.2.0
 
-* System dependencies
+* System dependencies Ubuntu 20.04
 
-* Configuration
+* Configuration WSL Ubuntu 20.04 LTS
 
-* Database creation
+* Database creation Sqlite 3, v 1.3.13
 
 * Database initialization
 
