@@ -8,11 +8,11 @@
 </head>
 <body>
 
-<%= render 'layouts/header' %>
-
 <% flash.each do |message_type, message| %>
   <% message_type %> <%= message %>
 <% end %>
+
+<%= render 'layouts/header' %>
 
 <%= yield %>
 

@@ -42,3 +42,5 @@ end
 
 gem 'web-console', group: :development
 gem 'minitest-reporters'
+gem 'faker', '1.4.2'
+gem 'will_paginate', '3.0.7'
