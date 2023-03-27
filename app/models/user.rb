@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
                     uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, length: {minimum: 6}, allow_blank: true
+  has_many :microposts, dependent: :destroy
+  scope :descending, -> {order(created_at: :desc)}
 end
