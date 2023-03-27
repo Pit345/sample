@@ -1,0 +1,5 @@
+<h2>User microposts: </h2>
+<% @microposts.each do |micropost|%>
+  <ol><%= micropost.id %>. <%= micropost.content %></ol>
+<% end %>
+<%= will_paginate @microposts %>

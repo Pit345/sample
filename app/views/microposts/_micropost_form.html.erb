@@ -1,0 +1,5 @@
+<% form_for(@micropost) do |f| %>
+  <%= f.label :content%>
+  <%= f.text_field :content%>
+  <%= f.submit 'add micropost' %>
+<%end%>
