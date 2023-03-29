@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id #добавляется значение в сессию, осуществляет вход на сайт
+      flash[:success] = "Welcome #{user.name}!"
       redirect_to user
     else
       flash.now[:danger] = 'Invalid email/password combination'
