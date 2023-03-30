@@ -1,8 +1,8 @@
 <% if logged_in? %>
-    <li><%= link_to "Users", users_path %></li>
-    <li><%= link_to "Profile", current_user %></li>
-    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-    <%= link_to "Log out", logout_path, method: "delete" %>
+    <%= link_to "Users", users_path %>
+    <%= link_to "My profile", current_user %>
+    <%= link_to "Settings", edit_user_path(current_user) %>
+    <p><%= link_to "Log out", logout_path, method: "delete" %></p>
   <% else %>
     <h2>Welcome to the Sample App!</h2>
     <li><%= link_to "Log in", login_path %></li>

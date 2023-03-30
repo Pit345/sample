@@ -5,8 +5,12 @@
   <%= @user.email %>.
 </h2>
 
-<% @microposts.each do |micro|%>
-  <li><%= micro.content %></li>
+<h2><%= "#{@user.name} microposts:"%></h2>
+
+<% if @microposts.empty? %>
+  <%= 'This user has no microposts' %>
+<%else%>
+  <%= render 'microposts/micropost'%>
 <%end%>
-<p><%= link_to 'Add microposts', help_path %></p>
+
 <%= will_paginate @microposts%>
