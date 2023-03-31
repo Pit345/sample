@@ -7,6 +7,10 @@
 
 <h2><%= "#{@user.name} microposts:"%></h2>
 
+<% if logged_in? %>
+  <%= render 'shared/micropost_form'%>
+<%end%>
+
 <% if @microposts.empty? %>
   <%= 'This user has no microposts' %>
 <%else%>

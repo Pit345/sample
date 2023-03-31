@@ -1,3 +1,4 @@
 <% @microposts.each do |micro|%>
-  <li><%= micro.content %></li>
+  <li><%= micro.content %> <%= link_to 'delete', micropost_path, 
+                            method: "delete", data: {confirm: "You sure?"} %></li>
 <%end%>
