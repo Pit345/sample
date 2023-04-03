@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
+
   def index
-    @users = User.descending.paginate(page: params[:page], per_page: 25)
+    @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.order(created_at: :desc).paginate(page: params[:page], per_page: 25)
-    @micropost = current_user.microposts.build if logged_in?
   end
 
   def new
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      flash[:success] = 'Welcome to the Sample App!'
+      flash[:success] = "#{@user.name}, welcome to the Sample App!"
       redirect_to @user
     else
       render :new

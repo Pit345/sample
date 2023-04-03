@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
 
   resources :users
+  resources :microposts, only: [:create, :destroy]
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  resources :microposts, only: [:new, :create, :destroy]
 end

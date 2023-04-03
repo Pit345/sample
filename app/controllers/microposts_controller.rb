@@ -1,21 +1,17 @@
 class MicropostsController < ApplicationController
+
   def create
     @micropost = current_user.microposts.create(micropost_params)
     if @micropost.save
-      flash[:succes] = 'Micropost created!'
+      flash[:success] = 'Micropost create!'
       redirect_to current_user
     else
-      render 'static_pages/home'
+      render 'users/show'
     end
-  end
-
-  def destroy
-    @micropost.destroy
-    redirect_to user_path
   end
 
   private
-    def micropost_params
-      params.require(:micropost).permit(:content)
-    end
+  def micropost_params
+    params.require(:micropost).permit(:content)
+  end
 end
