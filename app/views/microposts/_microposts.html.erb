@@ -1,0 +1,5 @@
+<h3>All microposts:</h3>
+<% @microposts.each do |micropost| %>
+  <li><%= micropost.content %> 
+  <%= link_to 'delete', micropost, method: :delete, data: {confirm: 'Are you sure?'} %></li>
+<%end%>

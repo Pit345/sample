@@ -1,0 +1,9 @@
+<% if logged_in? %>
+  <%= link_to 'Users', users_path %>
+  <%= link_to 'Profile', current_user %>
+  <%= link_to 'Settings', edit_user_path(current_user) %>
+  <p><%= link_to 'Log out', logout_path, method: :delete %></p>
+<%else%>
+  <p><%= link_to 'Log in', login_path %></p>
+  <p><%= link_to 'Sign up', new_user_path %></p>
+<%end%>
