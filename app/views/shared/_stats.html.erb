@@ -1,0 +1,8 @@
+<% @user ||= current_user %>
+<%= following_user_path(@user) %>
+<%= @user.following.count %>
+<%= followers_user_path(@user)%>
+
+
+
+

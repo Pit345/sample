@@ -1,5 +1,6 @@
-<%= form_for(@micropost_form) do |f| %>
-  <%= f.label :content %>
-  <%= f.text_area :content, placeholder: 'New micropost' %>
+<%= form_for(@micropost_form, html: {multipart: true}) do |f| %>
+  <h3><%= f.label :content %></h3>
+  <p><%= f.text_area :content, placeholder: 'New micropost...' %></p>
+  <p><%= f.file_field :picture %></p>
   <%= f.submit 'Add micropost'%>
 <%end%>

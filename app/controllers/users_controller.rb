@@ -2,13 +2,13 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update]
 
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 20)
   end
 
   def show
     @user = User.find(params[:id])
     @micropost_form = current_user.microposts.build
-    @microposts = @user.microposts
+    @microposts = @user.microposts.paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in(@user)
       flash[:success] = "#{@user.name}, welcome to the Sample App!"
-      redirect_to users_path
+      redirect_to current_user
     else
       render :new
     end
